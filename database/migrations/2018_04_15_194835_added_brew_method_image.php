@@ -14,7 +14,7 @@ class AddedBrewMethodImage extends Migration
     public function up()
     {
         Schema::table('brew_methods', function( Blueprint $table ){
-          $table->string('icon')->after('method');
+          $table->string('icon')->after('method')->nullable();
         });
     }
 

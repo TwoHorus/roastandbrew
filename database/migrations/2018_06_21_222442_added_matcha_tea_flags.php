@@ -14,8 +14,8 @@ class AddedMatchaTeaFlags extends Migration
     public function up()
     {
         Schema::table('cafes', function( Blueprint $table ){
-          $table->integer('tea')->after('added_by');
-          $table->integer('matcha')->after('tea');
+          $table->integer('tea')->after('added_by')->nullable();
+          $table->integer('matcha')->after('tea')->nullable();
         });
     }
 
@@ -28,7 +28,6 @@ class AddedMatchaTeaFlags extends Migration
     {
         Schema::table('cafes', function( Blueprint $table ){
           $table->dropColumn('tea');
-          $table->dropColumn('matcha');
         });
     }
 }

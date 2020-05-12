@@ -18,7 +18,7 @@ class AddedCities extends Migration
           $table->string('name');
           $table->string('state');
           $table->string('country');
-          $table->string('slug');
+          $table->string('slug')->nullable();
           $table->decimal('latitude', 11, 8)->nullable();
           $table->decimal('longitude', 11, 8)->nullable();
           $table->decimal('radius', 4, 2)->nullable();

@@ -14,7 +14,7 @@ class AddedSlugToCafes extends Migration
     public function up()
     {
         Schema::table('cafes', function( Blueprint $table ){
-          $table->string('slug', 500)->after('company');
+          $table->string('slug', 500)->after('company')->nullable();
         });
     }
 

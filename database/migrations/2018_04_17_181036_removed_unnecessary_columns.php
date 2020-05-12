@@ -15,9 +15,6 @@ class RemovedUnnecessaryColumns extends Migration
     {
         Schema::table('cafes', function( Blueprint $table ){
           $table->dropColumn('name');
-          $table->dropColumn('roaster');
-          $table->dropColumn('website');
-          $table->dropColumn('description');
         });
     }
 

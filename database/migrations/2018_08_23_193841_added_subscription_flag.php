@@ -14,7 +14,7 @@ class AddedSubscriptionFlag extends Migration
     public function up()
     {
         Schema::table('companies', function( Blueprint $table ){
-          $table->integer('subscription')->defualt(0)->after('roaster');
+          $table->integer('subscription')->defualt(0)->after('roaster')->nullable();
         });
     }
 

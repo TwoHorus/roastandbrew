@@ -29,8 +29,6 @@ class AddedSocialLinks extends Migration
     {
       Schema::table('companies', function( Blueprint $table ){
         $table->dropColumn('instagram_url');
-        $table->dropColumn('twitter_url');
-        $table->dropColumn('facebook_url');
       });
     }
 }

@@ -13,12 +13,18 @@ class UpdateRelationshipToCompany extends Migration
      */
     public function up()
     {
-        Schema::table('cafes', function( Blueprint $table ){
+      Schema::table('cafes', function( Blueprint $table ){
           $table->dropForeign('cafes_parent_foreign');
-          $table->dropColumn('parent');
-          $table->integer('company')->unsigned()->after('name');
+        });
+          Schema::table('cafes', function( Blueprint $table ){
+            $table->dropColumn('parent');
+          });
+            Schema::table('cafes', function( Blueprint $table ){
+
+          $table->integer('company')->unsigned()->after('name')->nullable();
           $table->foreign('company')->references('id')->on('companies');
         });
+      
     }
 
     /**
@@ -30,7 +36,6 @@ class UpdateRelationshipToCompany extends Migration
     {
         Schema::table('cafes', function( Blueprint $table ){
           $table->dropForeign('cafes_company_foreign');
-          $table->dropColumn('company');
           $table->integer('parent')->unsigned();
           $table->foreign('parent')->references('id')->on('cafes');
         });
